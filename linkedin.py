@@ -90,39 +90,8 @@ class LinkedInApp:
         tk.Button(self.root, text="Save", command=save_user).pack(pady=10)
         tk.Button(self.root, text="Back", command=self.main_menu).pack()
 
-    def add_job_screen(self):
-        # Clear the window
-        for widget in self.root.winfo_children():
-            widget.destroy()
-
-        tk.Label(self.root, text="Add Job", font=("Arial", 16)).pack(pady=10)
-
-        tk.Label(self.root, text="Job Title:").pack()
-        title_entry = tk.Entry(self.root)
-        title_entry.pack()
-
-        tk.Label(self.root, text="Company:").pack()
-        company_entry = tk.Entry(self.root)
-        company_entry.pack()
-
-        tk.Label(self.root, text="Location:").pack()
-        location_entry = tk.Entry(self.root)
-        location_entry.pack()
-
-        def save_job():
-            title = title_entry.get()
-            company = company_entry.get()
-            location = location_entry.get()
-            if title and company and location:
-                 self.jobs.append({"title": title, "company": company, "location": location})
-                 messagebox.showinfo("Success", f"Job '{title}' added successfully!")
-                 self.main_menu()
-            else:
-                messagebox.showerror("Error", "All fields are required!")
-
-        tk.Button(self.root, text="Save", command=save_job).pack(pady=10)
-        tk.Button(self.root, text="Back", command=self.main_menu).pack()
-
+   
+       
     def display_users_screen(self):
         # Clear the window
         for widget in self.root.winfo_children():
